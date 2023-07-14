@@ -75,6 +75,90 @@ create table RiskAuditUniverse(
     primary key(planID,riskItemID)
 );
 
+CREATE TABLE AuditSchedule(
+    planID int primary key,
+    quarterID int,
+    startDate int,
+    endDate int,
+    auditeesOrganID int,
+    dateCompleted date,
+    currentStatus varchar(200),
+    totalcost double,
+    involvesTravel boolean,
+    approvalStatus date,
+    createdAt date,
+    cretedBY int
+);
+
+create table AuditWorkMembers(
+    planId int,
+    scheduleID int,
+    auditorID int,
+    responsibility int,
+    perdium int,
+    primary key(scheduleID,auditorID)
+);
+
+create table AuditEngagement(
+    planID int primary key,
+    scheduleID int,
+    currentStatus int,
+    currentStatus int
+);
+
+
+Create table AuditProgram(
+    planID int primary key,
+    engamentID int,
+    auditHistory varchar(5000),
+    objectives varchar(5000),
+    methodology varchar(5000),
+    startDate Date,
+    endDate date
+    createdByBY int,
+    approvedBY int, 
+    approvalStatus int,
+    commentOnProgram int
+);
+
+cretae table WBS(
+    wbsID int primary key auto_increment,
+    planID int,
+    programID int,
+    taskID int,
+    taskDescription varchar(100),
+    startDate date,
+    endDate date,
+    totalDate double
+);
+
+create table AuditFindings(
+    findingID int primary key auto_increment,
+    planID int,
+    engamentID int,
+    auditArea int,
+    findig varchar(2000),
+    descriptions varchar(5000),
+    checklistID int,
+    Creiateria varchar(2000),
+    impacts varchar(2000),
+    couse int,
+    recomendations varchar(5000),
+    auditeesResponse varchar(5000),
+    auditeesResponseSubmitted boolean,
+    auditorJustifications varchar(2000),
+    findingsEvidencePath varchar(2000),
+    rectificationEvidence varchar(2000),
+    rectificationStatus int,
+    rectifcationPErcentage double,
+    isFullyREctified boolean,
+    findinStatus int  
+);
+
+
+
+
+
 
 
 
